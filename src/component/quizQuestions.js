@@ -15,13 +15,6 @@ function QuizFetch(){
         dispatch(setQuestion(e.target.value));
       
     }
-
-    function appendOption(){
-
-       
-    }
-
-
   
     function checkAns(){
         
@@ -36,7 +29,7 @@ function QuizFetch(){
                 <input type="checkbox"value={setOptions()}/>
                 <input type="checkbox"value={setOptions()}/>
                 <input type="checkbox"value={setOptions()}/> 
-               <button onClick={handleQuestionChange} type="submit"> </button>
+               <button onClick={handleQuestionChange} type="submit">props.text</button>
           </div>
          
           {

@@ -2,7 +2,7 @@ import React from "react";
 // import { useSelector, useDispatch } from "react-redux";
 // // import Weatherreducer from "../reducers";
 import "./Quiz.css";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 // import { WEATHER_API_KEY } from "../utils/constants";
 // import axios from "axios";
 
@@ -130,7 +130,7 @@ import { useSelector } from "react-redux";
 
 //            {!weatherData.loading && !weatherData.error && weatherData.data && (
 //         <div style={{ color: "green", marginTop: "100px", marginLeft: "20px" }}>
-//           <h2 style={{ color: "goldenrod", fontSize: "60px" }}>{weatherData.data.name}</h2>
+//           <h2 style={{ color: "goldenred", fontSize: "60px" }}>{weatherData.data.name}</h2>
 //           <h2>
 //             Temperature of the city: <span>{weatherData.data.main.temp} K</span>
 //           </h2>
@@ -159,25 +159,24 @@ function Quiz(){
     <div id="quiz-container">
          <h1 style={{ textAlign : "center"}}>Hello, Welcome to the mellow quiz</h1>
          <div className="box">  
-         
-            <link href="../component/quizQuestions.js">
                 <h2 id="quiz4">Quiz 4</h2>
                 <p>This is the description for first quiz</p>
                 
-            </link>
+                <link href="../component/quizQuestions.js">
+                </link>
                
          </div>           
          <div className="box">
-         <link href="../component/quizQuestions.js">
 
                 <h2 id="quiz4">Quiz 4</h2>
                 <p>This is the description for second quiz</p>
-           </link>
+                <link href="../component/quizQuestions.js">
+                </link>
          </div>
          <div className="box">
-         <link href="../component/quizQuestions.js">
                 <h2 id="quiz4">Quiz 4</h2>
                 <p>This is the description for third quiz</p>
+         <link href="../component/quizQuestions.js">
                 </link>
          </div>
     </div>

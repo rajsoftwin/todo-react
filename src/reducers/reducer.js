@@ -174,7 +174,8 @@ const initialState = {
             // correctAnswers : 0,
             submitted : false,
             totalQuestions : 12,
-            error: '',}
+            error: '',
+        }
 }
 
 const quizReducer = (state = initialState, action) => {
