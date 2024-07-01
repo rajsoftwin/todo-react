@@ -1,7 +1,10 @@
-import React from "react";
 // import { useSelector, useDispatch } from "react-redux";
 // // import Weatherreducer from "../reducers";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { answerQuestion } from '../actions/action';
 import "./Quiz.css";
+
 // import { useSelector } from "react-redux";
 // import { WEATHER_API_KEY } from "../utils/constants";
 // import axios from "axios";
@@ -152,36 +155,45 @@ import "./Quiz.css";
 
 // export default Weather;
 
-function Quiz(){
 
-    return (
-  <> 
-    <div id="quiz-container">
-         <h1 style={{ textAlign : "center"}}>Hello, Welcome to the mellow quiz</h1>
-         <div className="box">  
-                <h2 id="quiz4">Quiz 4</h2>
-                <p>This is the description for first quiz</p>
-                
-                <link href="../component/quizQuestions.js">
-                </link>
-               
-         </div>           
-         <div className="box">
+const Quiz = () => {
+  const selectedQuizId = useSelector((state) => state.quiz.selectedQuiz);
+  const quiz = useSelector((state) => selectedQuizId ? state.quiz.quizzes[selectedQuizId] : null);
+  const dispatch = useDispatch();
 
-                <h2 id="quiz4">Quiz 4</h2>
-                <p>This is the description for second quiz</p>
-                <link href="../component/quizQuestions.js">
-                </link>
-         </div>
-         <div className="box">
-                <h2 id="quiz4">Quiz 4</h2>
-                <p>This is the description for third quiz</p>
-         <link href="../component/quizQuestions.js">
-                </link>
-         </div>
+  if (!quiz) {
+    return <div>Select a quiz to start</div>;
+  }
+
+  const handleAnswer = (questionId, answer) => {
+    dispatch(answerQuestion(selectedQuizId, questionId, answer));
+  };
+
+  return (
+    <div className="quiz">
+      <h2>{quiz.title}</h2>
+      <p>{quiz.description}</p>
+      {quiz.questions.map((question) => (
+        <div key={question.id} style={{ marginBottom: '20px' }}>
+          <p>{question.question}</p>
+          {question.answers.map((answer) => (
+            <button
+              key={answer}
+              onClick={() => handleAnswer(question.id, answer)}
+              style={{
+                display: 'block',
+                margin: '5px 0',
+                backgroundColor: question.userAnswer === answer ? (answer === question.correctAnswer ? 'green' : 'red') : '',
+                color: question.userAnswer === answer ? 'white' : 'black',
+              }}
+            >
+              {answer}
+            </button>
+          ))}
+        </div>
+      ))}
     </div>
-  </>
-    )
-}
+  );
+};
 
 export default Quiz;

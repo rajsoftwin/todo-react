@@ -1,12 +1,6 @@
-// import reducer from "../reducers/reducer";
-import { configureStore } from "@reduxjs/toolkit";
-import quizReducer from "../reducers/reducer";
+import { createStore } from 'redux';
+import { rootReducer } from '../reducers/reducer';
 
-// 
- const store = configureStore({
-    reducer: quizReducer
- });
-
-
- export default store;
-
+export const store = createStore(
+  rootReducer,
+);

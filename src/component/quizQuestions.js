@@ -1,44 +1,26 @@
-import React, {useState} from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectQuiz } from '../actions/action';
 
-function QuizFetch(){
-  
-    const [question, setQuestion] = useState("");
-      const [options, setOptions] = useState(null);
-      const [answer, checkAnswer] = useState(false);
-      const quizData = useSelector(state => state.quizData);
+const QuizFetch = () => {
+  const quizzes = useSelector((state) => state.quiz.quizzes);
+  const dispatch = useDispatch();
 
-       const dispatch = useDispatch();
-
-
-    function handleQuestionChange(e){
-        dispatch(setQuestion(e.target.value));
-      
-    }
-  
-    function checkAns(){
-        
-      }
-    
-
-     return (
-        <>
-          <div class = "quiz-fetch-container">
-               <p style={{}} id="question">{/* here do something */}</p>
-                <input type="checkbox"value={setOptions()} onClick={checkAns(checkAnswer)} /> 
-                <input type="checkbox"value={setOptions()}/>
-                <input type="checkbox"value={setOptions()}/>
-                <input type="checkbox"value={setOptions()}/> 
-               <button onClick={handleQuestionChange} type="submit">props.text</button>
-          </div>
-         
-          {
-            quizData["Quiz-1"]["Question-1"].map(question)
-          }
-          
-      </>
-     )
-     
-}
+  return (
+    <div className="quiz-list">
+      {Object.keys(quizzes).map((quizId) => (
+        <div
+          key={quizId}
+          className="quiz-box"
+          onClick={() => dispatch(selectQuiz(quizId))}
+          style={{ border: '1px solid black', padding: '10px', margin: '10px', cursor: 'pointer' }}
+        >
+          <h2>{quizzes[quizId].title}</h2>
+          <p>{quizzes[quizId].description}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default QuizFetch;
