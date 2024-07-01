@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectQuiz } from '../actions/action';
+import './Quiz.css';
 
 const QuizFetch = () => {
   const quizzes = useSelector((state) => state.quiz.quizzes);

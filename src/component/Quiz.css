@@ -31,24 +31,28 @@
  background-color: rgb(222, 222, 200);
 
 } */
-
-#quiz-container{
+.quiz-list {
     display: flex;
-    flex-direction: row;
-    height: 500px;
-    width: 600px;
-    
-    margin-right: auto;
-    margin-left: auto;
-    border: 1px black solid;
-    border-radius: 12px;
-}
+    width: 70vh;
+   
+  }
+  
+  .quiz-box {
+    width: 30%;
+    background-color: #f0f0f0;
+    width: 100vh;
+   
+  }
+  
+  button {
+    padding: 10px;
+   margin-right: auto;
+   margin-left: auto;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+    width: 100vh;
 
-#quiz-container div {
-   display: flex;
-   flex-direction: row;
-   height: 100px;
-   width: 120px;
-   border: 0.5px black solid;
-   margin: 30px;
-}
+  }
+  
