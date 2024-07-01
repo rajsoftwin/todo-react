@@ -1,0 +1,39 @@
+#### Objective:
+The goal of this assignment is to build a simple quiz application using React and Redux. This project will help you demonstrate your proficiency in managing state with Redux, creating a user-friendly interface with React, and handling asynchronous data flow.
+
+#### Requirements:
+
+1. **User Interface:**
+   - Create a clean and intuitive user interface using React.
+   - The main screen should display a list of available quizzes.
+   - Each quiz should display a title and a description.
+   - Upon selecting a quiz, navigate to a new screen that shows the quiz questions.
+
+2. **Quiz Functionality:**
+   - Each quiz should have multiple questions.
+   - Each question can have multiple-choice answers.
+   - Only one answer can be selected per question.
+   - Users should be able to navigate between questions.
+
+3. **State Management:**
+   - Use Redux for managing the state of the application.
+   - Store the list of quizzes, the current quiz questions, and the user's answers in the Redux store.
+   - Implement actions and reducers for fetching quizzes, selecting a quiz, answering questions, and submitting the quiz.
+
+4. **Asynchronous Data Handling:**
+   - Simulate fetching quiz data from an API.
+   - Use middleware like redux-thunk or redux-saga to handle asynchronous actions.
+   - Display loading indicators while fetching data.
+
+5. **Submission and Results:**
+   - Allow users to submit their answers once they have completed all questions.
+   - Upon submission, calculate the user's score based on correct answers.
+   - Display the user's score and correct answers on a results screen.
+
+
+  "action type" = answer, 
+
+  7 - 730 = freshup
+  730 - 830 = episode
+  830 - masti
+  930 - slep

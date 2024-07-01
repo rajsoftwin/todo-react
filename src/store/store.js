@@ -1,17 +1,13 @@
-import { configureStore } from '@reduxjs/toolkit';
-import slicerfunction from '../reducers/index'
+// import reducer from "../reducers/reducer";
+import { configureStore } from "@reduxjs/toolkit";
+import quizReducer from "../reducers/reducer";
+
+// // // Configure the store with the root reducer and apply thunk middleware
+
+ const store = configureStore({
+    reducer: quizReducer
+ });
 
 
-// const store = configureStore({
-//   reducer: reducer, 
-// });
+ export default store;
 
-// export default store;
-
-const store = configureStore({
-    reducer  : 
-    {
-      todos :slicerfunction
-    }
-});
-export default store;
