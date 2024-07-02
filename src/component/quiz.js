@@ -152,24 +152,23 @@ import { useNavigate } from 'react-router-dom';
 //         </div>
 //        )
 // }
-
 // export default Weather;
 
 
 const Quiz = () => {
   const selectedQuizId = useSelector((state) => state.quiz.selectedQuiz);
   const quiz = useSelector((state) => selectedQuizId ? state.quiz.quizzes[selectedQuizId] : null);
-const navigate = useNavigate();
-
-  if (!quiz) {
+ const navigate = useNavigate();
+ 
+   if (!quiz) {
     return <div>Select a quiz to start</div>;
   }
 
   // const handleAnswer = (questionId, answer) => {
   //   dispatch(answerQuestion(selectedQuizId, questionId, answer));
   // };
-
-
+     
+  
 
   return (
     <div className="quiz">

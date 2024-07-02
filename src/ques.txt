@@ -37,3 +37,8 @@ The goal of this assignment is to build a simple quiz application using React an
   730 - 830 = episode
   830 - masti
   930 - slep
+
+
+  6.30 to 8 - ghedi 
+  8 - 830 - home 
+830 - 930 - ata pata slep 

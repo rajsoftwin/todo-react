@@ -13,9 +13,9 @@ const App = () => {
        <Router>
           <div className='app'>
              <Routes>
-               <Route path='/' element = {<QuizFetch/>} />
-               <Route path='/quiz/:quizId/' Component={<Quiz />} />
-               <Route path = '/quiz/:quizId/question/:questionId' Component={<Question/>} />
+               <Route path='/' element = {<QuizFetch />}/>
+               <Route path='/quiz/:quizId/' Component={<Quiz />}/>
+               <Route path='/quiz/:quizId/question/:questionId' Component={<Question />}/>
              </Routes>
           </div>
        </Router>
