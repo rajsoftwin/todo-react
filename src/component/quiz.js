@@ -4,6 +4,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { answerQuestion } from '../actions/action';
 import "./Quiz.css";
+import { useNavigate } from 'react-router-dom';
 
 // import { useSelector } from "react-redux";
 // import { WEATHER_API_KEY } from "../utils/constants";
@@ -150,7 +151,6 @@ import "./Quiz.css";
 //       )}
 //         </div>
 //        )
-
 // }
 
 // export default Weather;
@@ -159,27 +159,30 @@ import "./Quiz.css";
 const Quiz = () => {
   const selectedQuizId = useSelector((state) => state.quiz.selectedQuiz);
   const quiz = useSelector((state) => selectedQuizId ? state.quiz.quizzes[selectedQuizId] : null);
-  const dispatch = useDispatch();
+const navigate = useNavigate();
 
   if (!quiz) {
     return <div>Select a quiz to start</div>;
   }
 
-  const handleAnswer = (questionId, answer) => {
-    dispatch(answerQuestion(selectedQuizId, questionId, answer));
-  };
+  // const handleAnswer = (questionId, answer) => {
+  //   dispatch(answerQuestion(selectedQuizId, questionId, answer));
+  // };
+
+
 
   return (
     <div className="quiz">
       <h2>{quiz.title}</h2>
       <p>{quiz.description}</p>
+
       {quiz.questions.map((question) => (
         <div key={question.id} style={{ marginBottom: '20px' }}>
           <p>{question.question}</p>
           {question.answers.map((answer) => (
             <button
               key={answer}
-              onClick={() => handleAnswer(question.id, answer)}
+              // onClick={() => handleAnswer(question.id, answer)}
               style={{
                 display: 'block',
                 margin: '5px 0',
@@ -197,3 +200,5 @@ const Quiz = () => {
 };
 
 export default Quiz;
+
+// quizzes 

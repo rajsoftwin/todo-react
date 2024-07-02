@@ -2,10 +2,12 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectQuiz } from '../actions/action';
 import './Quiz.css';
+import { useNavigate } from 'react-router-dom';
 
 const QuizFetch = () => {
   const quizzes = useSelector((state) => state.quiz.quizzes);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <div className="quiz-list">
@@ -25,3 +27,4 @@ const QuizFetch = () => {
 };
 
 export default QuizFetch;
+
