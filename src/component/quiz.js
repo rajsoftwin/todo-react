@@ -2,10 +2,8 @@
 // // import Weatherreducer from "../reducers";
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { answerQuestion } from '../actions/action';
 import "./Quiz.css";
-import { useNavigate } from 'react-router-dom';
-
+import { useParams, Link } from 'react-router-dom'; 
 // import { useSelector } from "react-redux";
 // import { WEATHER_API_KEY } from "../utils/constants";
 // import axios from "axios";
@@ -158,8 +156,8 @@ import { useNavigate } from 'react-router-dom';
 const Quiz = () => {
   const selectedQuizId = useSelector((state) => state.quiz.selectedQuiz);
   const quiz = useSelector((state) => selectedQuizId ? state.quiz.quizzes[selectedQuizId] : null);
- const navigate = useNavigate();
- 
+ const { quizId } = useParams();
+
    if (!quiz) {
     return <div>Select a quiz to start</div>;
   }
@@ -178,23 +176,18 @@ const Quiz = () => {
       {quiz.questions.map((question) => (
         <div key={question.id} style={{ marginBottom: '20px' }}>
           <p>{question.question}</p>
-          {question.answers.map((answer) => (
-            <button
-              key={answer}
-              // onClick={() => handleAnswer(question.id, answer)}
-              style={{
-                display: 'block',
-                margin: '5px 0',
-                backgroundColor: question.userAnswer === answer ? (answer === question.correctAnswer ? 'green' : 'red') : '',
-                color: question.userAnswer === answer ? 'white' : 'black',
-              }}
-            >
-              {answer}
-            </button>
-          ))}
+          {quiz.questions.map((question) => (
+        <div key={question.id} style={{ marginBottom: '20px' }}>
+          <p>{question.question}</p>
+          <Link to={`/quiz/${quizId}/question/${question.id}`}>
+            <button>Answer Question</button>
+          </Link>
+        </div>
+      ))}
         </div>
       ))}
     </div>
+  
   );
 };
 

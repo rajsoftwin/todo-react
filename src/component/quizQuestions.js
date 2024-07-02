@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const QuizFetch = () => {
   const quizzes = useSelector((state) => state.quiz.quizzes);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const navigate = useNavigate();
 
   return (
@@ -15,7 +15,7 @@ const QuizFetch = () => {
         <div
           key={quizId}
           className="quiz-box"
-          onClick={() => dispatch(selectQuiz(quizId))}
+          onClick={() => navigate(`/quiz/${quizId}`)}
           style={{ border: '1px solid black', padding: '10px', margin: '10px', cursor: 'pointer' }}
         >
           <h2>{quizzes[quizId].title}</h2>

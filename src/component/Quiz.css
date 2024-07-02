@@ -32,27 +32,29 @@
 
 } */
 .quiz-list {
-    display: flex;
-    width: 70vh;
-   
-  }
-  
-  .quiz-box {
-    width: 30%;
-    background-color: #f0f0f0;
-    width: 100vh;
-   
-  }
-  
-  button {
-    padding: 10px;
-   margin-right: auto;
-   margin-left: auto;
-  }
-  
-  button:hover {
-    opacity: 0.8;
-    width: 40vh;
+  display: flex;
+  justify-content: space-around;
+}
 
-  }
+.quiz-box {
+  width: 30%;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+button {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.question {
+  margin: 20px;
+}
+
   

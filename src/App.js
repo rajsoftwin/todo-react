@@ -10,15 +10,16 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 const App = () => {
   return (
     <Provider store={store}>
-       <Router>
-          <div className='app'>
-             <Routes>
-               <Route path='/' element = {<QuizFetch />}/>
-               <Route path='/quiz/:quizId/' Component={<Quiz />}/>
-               <Route path='/quiz/:quizId/question/:questionId' Component={<Question />}/>
-             </Routes>
-          </div>
-       </Router>
+      <Router>
+        <div className="App">
+          <h1>Quiz App</h1>
+          <Routes>
+            <Route path="/" element={<QuizFetch />} />
+            <Route path="/quiz/:quizId" element={<Quiz />} />
+            <Route path="/quiz/:quizId/question/:questionId" element={<Question />} />
+          </Routes>
+        </div>
+      </Router>
     </Provider>
   );
 };
