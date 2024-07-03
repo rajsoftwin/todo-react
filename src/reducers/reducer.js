@@ -110,6 +110,7 @@ const initialState = {
 };
 
 const quizReducer = (state = initialState, action) => {
+
   switch (action.type) {
     case SELECT_QUIZ:
       return {
@@ -126,7 +127,7 @@ const quizReducer = (state = initialState, action) => {
             ...state.quizzes[quizId],
             questions: state.quizzes[quizId].questions.map((q) =>
               q.id === questionId ? { ...q, userAnswer: answer } : q
-            )
+              )
           }
         }
       };
@@ -138,6 +139,5 @@ const quizReducer = (state = initialState, action) => {
 export const rootReducer = combineReducers({
   quiz: quizReducer
 });
-
 
 /// /quiz1/question1
